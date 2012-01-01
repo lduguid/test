@@ -1,7 +1,8 @@
-;; symbols are a fundamental data type in lisp 
-;; ' (quotation mark) signifies data mode
-
-;; (foo bla bla bla bla bla) - foo is comamnd, bla section is a form
+;; Parentheses in Lisp are there to keep the amount of syntax to a minimum
+;; List are created from cons cells
+;; ' = data mode
+;; You can create list by making cons cells
+;; You can inspect the pieces of a list with car and cdr
 
 (defun square (n)
   (* n n)
@@ -27,5 +28,54 @@
   (/ 4.0 6)
 )
 
+(defun strings-1 ()
+  (princ "Tutti Frutti")
+)
 
+(defun strings-2 ()
+  (princ "He yelled \"Stop that theif\" from the busy street.")
+)
 
+(defun cons-0 ()
+  (cons 'chicken 'cat)
+)
+
+(defun cons-1 ()
+  (cons 'chicken 'nil)
+)
+
+(defun cons-2 ()
+  (cons 'chicken ())
+)
+
+(defun cons-3 ()
+  (cons 'beef (cons 'chicken ()))
+)
+
+(defun cons-4 ()
+  (cons 'pork (cons 'beef (cons 'chicken ())))
+)
+
+(defun cons-5 ()
+  (car '(pork beef chicken))
+)
+
+(defun cons-6 ()
+  (cdr '(pork beef chicken))
+)
+
+(defun cons-7 ()
+  (car (cdr '(pork beef chicken)))
+)
+
+(defun cons-8 ()
+  (cadr '(pork beef chicken))
+)
+
+(defun list-1 ()
+  (list 'pork 'beef 'chicken)
+)
+
+(defun list-2 ()
+  '(pork beef chicken)
+)
